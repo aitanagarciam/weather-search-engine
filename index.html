@@ -3,55 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather Search Engine</title>
   </head>
   <body>
     <section class="weather-app">
       <div class="form">
         <form>
-        <input type="search" placeholder="Enter a city..." required class="search-form">
-        <input type="submit" value="Search" class="search-button">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-form"
+          />
+          <input type="submit" value="Search" class="search-button" />
         </form>
-      </div>  
-      
-    <h1>Caracas</h1>
-    <p>
-        <div><img src="img/clear-sky-day.png"> <span id="temperature">21</span><span id="unit">°C</span></div>
-        <div>
-        Humidity: 87%<br />
-        Wind: 7.2 km/h
+      </div>
+
+      <h1>Caracas</h1>
+      <div class="data">
+        <div class="temperature">
+          <span id="icon">☀️</span> <span id="temperature">21</span
+          ><span id="unit">°C</span>
         </div>
         <div>
-        <span id="weekday">Tuesday</span> <span id="hour">12</span>:<span
+          Humidity:
+          <span class="humidity"><span id="humidity-value">87</span>%</span
+          ><br />
+          Wind: <span class="wind"><span id="wind-value">7.2</span> km/h</span>
+        </div>
+        <div class="current">
+          <span id="weekday">Tuesday</span>, <span id="hour">12</span>:<span
             id="minutes"
             >15</span
-        ><br />
-        <span id="weather">Clear Sky</span>
+          ><br />
+          <span id="weather">Clear Sky</span>
         </div>
-    </p>
-    
-    <footer>
-      This project was coded by
-      <a href="https://ve.linkedin.com/in/aitana-garcia" target="_blank"
-        >Aitana Garcia</a
-      >, is
-      <a
-        href="https://github.com/aitanagarciam/weather-search-engine"
-        target="_blank"
-        >open-soured on GitHub</a
-      >
-      and hosted on
-      <a
-        href="https://weather-search-engine-aitana.netlify.app/"
-        target="_blank"
-        >Netflify</a
-      >
-    </footer>
-</section>
-    
+      </div>
+
+      <footer>
+        This project was coded by
+        <a href="https://ve.linkedin.com/in/aitana-garcia" target="_blank"
+          >Aitana Garcia</a
+        >, is
+        <a
+          href="https://github.com/aitanagarciam/weather-search-engine"
+          target="_blank"
+          >open-soured on GitHub</a
+        >
+        and hosted on
+        <a
+          href="https://weather-search-engine-aitana.netlify.app/"
+          target="_blank"
+          >Netflify</a
+        >
+      </footer>
+    </section>
   </body>
 </html>
