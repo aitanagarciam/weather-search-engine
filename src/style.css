@@ -1,5 +1,21 @@
 body {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: linear-gradient(
+    67.6deg,
+    rgb(225, 242, 254) -2.8%,
+    rgb(193, 224, 250) 44.6%,
+    rgb(19, 116, 197) 102.4%
+  );
   background-repeat: repeat-x;
   background-attachment: fixed;
+}
+
+.weather-app {
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 30px 50px rgba(85, 85, 85, 0.1);
 }
