@@ -79,6 +79,11 @@ h1 {
   font-weight: bold;
 }
 
+.current {
+  font-size: 18px;
+  margin-top: -2px;
+}
+
 #weather {
   font-style: italic;
 }
