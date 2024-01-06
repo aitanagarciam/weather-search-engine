@@ -2,14 +2,23 @@ function refreshWeather(response) {
   console.log(response.data);
   let cityName = document.querySelector("#city");
   cityName.innerHTML = response.data.city;
-  //console.log(response.data.temperature.current);
+
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML =
     Math.round(response.data.temperature.current * 10) / 10;
+
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = response.data.temperature.humidity;
+
   let wind = document.querySelector("#wind-value");
   wind.innerHTML = response.data.wind.speed;
+
+  let weatherDescription = document.querySelector("#weather");
+  weatherDescription.innerHTML = response.data.condition.description;
+
+  let weatherIcon = document.querySelector("#icon");
+  let iconURL = response.data.condition.icon_url;
+  weatherIcon.src = iconURL;
 }
 
 function searchCity(city) {

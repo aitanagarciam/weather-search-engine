@@ -26,6 +26,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 800;
   font-size: 48px;
+  padding-bottom: 30px;
 }
 
 .search-form {
@@ -53,10 +54,16 @@ h1 {
   padding: 0 40px 40px 0;
 }
 
+#icon {
+  width: 150px;
+  position: relative;
+  top: 50px;
+}
+
 .temperature {
   font-size: 72px;
   font-weight: 800;
-  margin-top: -20px;
+  margin-top: -110px;
 }
 
 #unit {
@@ -70,6 +77,14 @@ h1 {
 .wind,
 .current {
   font-weight: bold;
+}
+
+#weather {
+  font-style: italic;
+}
+
+p {
+  font-size: 20px;
 }
 
 footer {
