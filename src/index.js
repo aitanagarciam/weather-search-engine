@@ -18,6 +18,8 @@ hour.innerHTML = today.getHours();
 let minutes = document.querySelector("#minutes");
 minutes = today.getMinutes();
 
+searchCity("Caracas");
+
 function refreshWeather(response) {
   console.log(response.data);
   let cityName = document.querySelector("#city");
