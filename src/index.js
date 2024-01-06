@@ -1,3 +1,23 @@
+let today = new Date();
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let weekday = document.querySelector("#weekday");
+weekday.innerHTML = weekdays[today.getDay()];
+
+let hour = document.querySelector("#hour");
+hour.innerHTML = today.getHours();
+
+let minutes = document.querySelector("#minutes");
+minutes = today.getMinutes();
+
 function refreshWeather(response) {
   console.log(response.data);
   let cityName = document.querySelector("#city");
