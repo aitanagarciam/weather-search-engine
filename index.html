@@ -15,18 +15,19 @@
   <body>
     <section class="weather-app">
       <div class="form">
-        <form>
+        <form id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-form"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
       </div>
 
-      <h1>Caracas</h1>
+      <h1 id="city">Caracas</h1>
       <div class="data">
         <div class="temperature">
           <span id="icon">☀️</span> <span id="temperature">21</span
@@ -65,5 +66,6 @@
         >
       </footer>
     </section>
+    <script src="src/index.js"></script>
   </body>
 </html>
