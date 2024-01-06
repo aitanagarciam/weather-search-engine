@@ -4,7 +4,8 @@ function refreshWeather(response) {
   cityName.innerHTML = response.data.city;
   //console.log(response.data.temperature.current);
   let temperature = document.querySelector("#temperature");
-  temperature.innerHTML = response.data.temperature.current;
+  temperature.innerHTML =
+    Math.round(response.data.temperature.current * 10) / 10;
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = response.data.temperature.humidity;
   let wind = document.querySelector("#wind-value");
