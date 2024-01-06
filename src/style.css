@@ -88,6 +88,26 @@ h1 {
   font-style: italic;
 }
 
+.forecast {
+  padding: 20px 0px;
+  border-top: 1px solid rgba(85, 85, 85, 0.1);
+  text-align: center;
+  color: #7d7d7d;
+}
+
+.forecast-date {
+  font-weight: bold;
+}
+
+.forecast-image {
+  margin: -8px 0;
+  width: 75px;
+}
+
+.max-temperature {
+  font-weight: bold;
+}
+
 footer {
   font-size: 12px;
   color: rgb(150, 150, 150);
