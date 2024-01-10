@@ -101,6 +101,11 @@ h1 {
   font-weight: bold;
 }
 
+.forecast-condition {
+  font-style: italic;
+  font-size: 14px;
+}
+
 .forecast-image {
   margin: -8px 0;
   width: 75px;

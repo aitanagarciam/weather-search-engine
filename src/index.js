@@ -21,7 +21,6 @@ minutes = today.getMinutes();
 searchCity("Caracas");
 
 function refreshWeather(response) {
-  console.log(response.data);
   let cityName = document.querySelector("#city");
   cityName.innerHTML = response.data.city;
 
@@ -47,22 +46,21 @@ function getForecast(response) {
   console.log(response.data);
 
   let days = response.data.daily;
-
   let forecast = document.querySelector("#forecast");
-
-  //let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let forecastHTML = "";
 
-  days.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row">
+  days.forEach(function (days, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row">
           <div class="col">
             <div class="forecast-date">${days.condition.description}</div>
+            <div class="forecast-condition">${days.condition.description}</div>
             <img
               class="forecast-image"
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              src='${days.condition.icon_url}'
             />
             <div class="forecast-temperature">
               <span class="max-temperature">${Math.round(
@@ -74,6 +72,7 @@ function getForecast(response) {
             </div>
           </div>
         </div>`;
+    }
   });
 
   forecast.innerHTML = forecastHTML;
@@ -91,40 +90,7 @@ function handleSearch(event) {
   event.preventDefault();
   let input = document.querySelector("#search-input");
   searchCity(input.value);
-  getForecast(input.value);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSearch);
-
-/*
-function displayForecast() {
-  let forecast = document.querySelector("#forecast");
-
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  let forecastHTML = "";
-
-  days.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row">
-          <div class="col">
-            <div class="forecast-date">${days}</div>
-            <img
-              class="forecast-image"
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
-            />
-            <div class="forecast-temperature">
-              <span class="max-temperature">29°</span>
-              <span class="min-temperature">24°</span>
-            </div>
-          </div>
-        </div>`;
-  });
-
-  forecast.innerHTML = forecastHTML;
-}
-
-displayForecast();
-*/
