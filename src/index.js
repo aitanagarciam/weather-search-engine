@@ -43,21 +43,61 @@ function refreshWeather(response) {
   weatherIcon.src = iconURL;
 }
 
+function getForecast(response) {
+  console.log(response.data);
+
+  let days = response.data.daily;
+
+  let forecast = document.querySelector("#forecast");
+
+  //let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHTML = "";
+
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
+          <div class="col">
+            <div class="forecast-date">${days.condition.description}</div>
+            <img
+              class="forecast-image"
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            />
+            <div class="forecast-temperature">
+              <span class="max-temperature">${Math.round(
+                days.temperature.maximum
+              )}°</span>
+              <span class="min-temperature">${Math.round(
+                days.temperature.minimum
+              )}°</span>
+            </div>
+          </div>
+        </div>`;
+  });
+
+  forecast.innerHTML = forecastHTML;
+}
+
 function searchCity(city) {
   let APIKey = "e30450tcao35053d2a305f02341b3b2d";
   let APIURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${APIKey}`;
+  let forecastAPI = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${APIKey}`;
   axios.get(APIURL).then(refreshWeather);
+  axios.get(forecastAPI).then(getForecast);
 }
 
 function handleSearch(event) {
   event.preventDefault();
   let input = document.querySelector("#search-input");
   searchCity(input.value);
+  getForecast(input.value);
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSearch);
 
+/*
 function displayForecast() {
   let forecast = document.querySelector("#forecast");
 
@@ -87,3 +127,4 @@ function displayForecast() {
 }
 
 displayForecast();
+*/
