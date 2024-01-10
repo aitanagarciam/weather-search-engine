@@ -18,8 +18,6 @@ hour.innerHTML = today.getHours();
 let minutes = document.querySelector("#minutes");
 minutes = today.getMinutes();
 
-searchCity("Caracas");
-
 function refreshWeather(response) {
   let cityName = document.querySelector("#city");
   cityName.innerHTML = response.data.city;
@@ -42,6 +40,13 @@ function refreshWeather(response) {
   weatherIcon.src = iconURL;
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return weekdays[date.getDay()];
+}
+
 function getForecast(response) {
   console.log(response.data);
 
@@ -56,7 +61,7 @@ function getForecast(response) {
         forecastHTML +
         `<div class="row">
           <div class="col">
-            <div class="forecast-date">${days.condition.description}</div>
+            <div class="forecast-date">${formatDate(days.time)}</div>
             <div class="forecast-condition">${days.condition.description}</div>
             <img
               class="forecast-image"
@@ -94,3 +99,5 @@ function handleSearch(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSearch);
+
+searchCity("Caracas");
