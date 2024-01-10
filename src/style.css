@@ -89,7 +89,7 @@ h1 {
 }
 
 .forecast {
-  padding: 20px 0px;
+  padding: 40px 0px;
   border-top: 1px solid rgba(85, 85, 85, 0.1);
   text-align: center;
   color: #7d7d7d;
@@ -109,10 +109,16 @@ h1 {
 .forecast-image {
   margin: -8px 0;
   width: 75px;
+  padding: 8px 0;
 }
 
 .max-temperature {
   font-weight: bold;
+}
+
+.divider {
+  border-top: 1px solid rgba(85, 85, 85, 0.1);
+  padding: 20px 0;
 }
 
 footer {
@@ -120,7 +126,6 @@ footer {
   color: rgb(150, 150, 150);
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid rgba(85, 85, 85, 0.1);
 }
 
 footer a {
